@@ -1,0 +1,98 @@
+body {
+    background-color: #121212; /* গাঢ় কালো ব্যাকগ্রাউন্ড */
+    color: #f0f0f0; /* সাদা টেক্সট */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 400px; /* মোবাইল স্ক্রিনের মতো ছোট সাইজ */
+    background-color: #1f1f1f; /* ভেতরের অংশের জন্য হালকা কালো */
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ব্যালেন্স বক্স স্টাইল */
+.balance-box {
+    background-color: #8a2be2; /* বেগুনি ব্যাকগ্রাউন্ড */
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5); /* বেগুনি আভা */
+}
+
+/* ইনপুট গ্রুপ স্টাইল */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* সিলেক্ট ও ভ্যালিডিটি অপশন স্টাইল */
+select, .validity-option {
+    width: 100%;
+    padding: 12px;
+    background-color: #2b2b2b;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #f0f0f0;
+    appearance: none; /* ডিফল্ট ড্রপডাউন তীর সরানোর জন্য */
+    box-sizing: border-box;
+}
+
+/* কোয়ান্টিটি কন্ট্রোল */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.quantity-control input {
+    flex-grow: 1;
+    text-align: center;
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 10px 0;
+    font-size: 16px;
+    /* অন্যান্য স্টাইল... */
+}
+
+/* বাটন স্টাইল */
+.qty-btn, .generate-btn {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.qty-btn {
+    background-color: #8a2be2; /* বেগুনি রং */
+}
+
+.generate-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: #8a2be2; /* উজ্জ্বল বেগুনি */
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.7); /* বেগুনি গ্লো */
+    transition: background-color 0.3s;
+}

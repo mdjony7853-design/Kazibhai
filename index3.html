@@ -1,0 +1,30 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const quantityInput = document.getElementById('quantity');
+    const minusBtn = document.querySelector('.minus');
+    const plusBtn = document.querySelector('.plus');
+    const generateBtn = document.querySelector('.generate-btn');
+
+    // কোয়ান্টিটি বাড়ানোর ফাংশন
+    plusBtn.addEventListener('click', () => {
+        let currentVal = parseInt(quantityInput.value);
+        quantityInput.value = currentVal + 1;
+    });
+
+    // কোয়ান্টিটি কমানোর ফাংশন
+    minusBtn.addEventListener('click', () => {
+        let currentVal = parseInt(quantityInput.value);
+        if (currentVal > 1) { // নিশ্চিত করতে হবে যেন ১ এর নিচে না যায়
+            quantityInput.value = currentVal - 1;
+        }
+    });
+
+    // জেনারেট বাটনে ক্লিক করলে কী হবে
+    generateBtn.addEventListener('click', () => {
+        const product = document.getElementById('product-type').value;
+        const quantity = quantityInput.value;
+        
+        // --- এই অংশে ব্যাক-এন্ড কোড যুক্ত হবে ---
+        alert(`Generating ${quantity} Key(s) for ${product}. (এটি শুধু একটি ডেমো)`);
+        // ---
+    });
+});

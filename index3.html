@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Kazibhai - Key Generator</title>
+    <style>
+        nav ul { list-style-type: none; padding: 0; }
+        nav ul li { display: inline; margin-right: 10px; }
+        .quantity-holder {
+            display: inline-flex;
+            align-items: center;
+        }
+        .minus, .plus {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px;
+            border: 1px solid #999;
+            background: #eee;
+        }
+        .generate-btn {
+            margin-top: 10px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kazibhai - Key Generator (পেজ ৩)</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">হোম</a></li>
+            <li><a href="index2.html">পেজ ২</a></li>
+            <li><a href="index3.html">Key Generator</a></li>
+        </ul>
+    </nav>
+    <div>
+        <label>Product: 
+            <select id="product-type">
+                <option value="Premium">Premium</option>
+                <option value="Basic">Basic</option>
+            </select>
+        </label>
+        <br>
+        <label>Quantity:</label>
+        <div class="quantity-holder">
+            <button class="minus">-</button>
+            <input type="number" id="quantity" value="1" min="1" style="width:50px;" />
+            <button class="plus">+</button>
+        </div>
+        <br>
+        <button class="generate-btn">Generate</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quantityInput = document.getElementById('quantity');
+            const minusBtn = document.querySelector('.minus');
+            const plusBtn = document.querySelector('.plus');
+            const generateBtn = document.querySelector('.generate-btn');
+
+            plusBtn.addEventListener('click', () => {
+                let currentVal = parseInt(quantityInput.value);
+                quantityInput.value = currentVal + 1;
+            });
+
+            minusBtn.addEventListener('click', () => {
+                let currentVal = parseInt(quantityInput.value);
+                if (currentVal > 1) {
+                    quantityInput.value = currentVal - 1;
+                }
+            });
+
+            generateBtn.addEventListener('click', () => {
+                const product = document.getElementById('product-type').value;
+                const quantity = quantityInput.value;
+                // ডেমো লিংক
+                const link = `https://kazibhai.com/generate?product=${product}&quantity=${quantity}`;
+                document.getElementById('result').innerHTML = `<a href="${link}" target="_blank">Generated Link: ${link}</a>`;
+            });
+        });
+    </script>
+</body>
+</html>
